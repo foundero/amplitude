@@ -34,6 +34,7 @@ function Amplitude (token, options) {
   this.userId = options.userId || options.user_id
   this.deviceId = options.deviceId || options.device_id
   this.sessionId = options.sessionId || options.session_id
+  this.platform = options.platform || options.platform
 }
 
 Amplitude.prototype._generateRequestData = function (data) {
@@ -52,6 +53,7 @@ Amplitude.prototype._generateRequestData = function (data) {
     transformedData.user_id = transformedData.user_id || this.userId
     transformedData.device_id = transformedData.device_id || this.deviceId
     transformedData.session_id = transformedData.session_id || this.sessionId
+    transformedData.platform = transformedData.platform || this.platform
 
     return transformedData
   }, this)
